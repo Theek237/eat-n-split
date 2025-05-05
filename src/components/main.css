@@ -1,0 +1,42 @@
+.friend-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.friend-container .right-side {
+  display: flex;
+  flex-direction: column;
+  font-size: medium;
+}
+
+.friend-container .right-side .name {
+  font-weight: 800;
+}
+
+.friend-container .right-side .balance {
+  font-size: 12px;
+}
+.firendlist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-friend-container {
+  width: 300px;
+}
+.add-friend-container .add-friend-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.split-bill-form-container {
+  width: 400px;
+}
+
+.split-bill-form-container .split-bill-form {
+  display: flex;
+  flex-direction: column;
+}
