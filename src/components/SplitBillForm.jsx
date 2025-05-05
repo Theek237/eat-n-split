@@ -1,10 +1,8 @@
 import React from "react";
 import Button from "./Button";
 
-function SplitBillForm() {
-  // Assuming 'name' is passed as a prop or comes from state
-  const name = "FriendName";
-
+function SplitBillForm({ friend }) {
+  const { name } = friend;
   return (
     <div className="w-[400px] bg-violet-100 p-4 rounded-lg shadow-md">
       <form className="flex flex-col gap-2">

@@ -1,14 +1,16 @@
 import React from "react";
 import Button from "./Button";
-function Friend({ name, imgUrl, balance }) {
+
+function Friend({ friend, isSelected, onSelection }) {
+  const { name, image: imgUrl, balance } = friend;
   return (
     <>
-      <div className="flex items-center  justify-between gap-2.5 p-2 rounded hover:bg-violet-100">
+      <div className="flex items-center justify-between gap-2.5 p-2 rounded hover:bg-violet-100">
         <div className="flex items-center gap-3">
           <img src={imgUrl} alt={name} className="rounded-full w-12 h-12" />
           <div className="flex flex-col text-base">
             <div className="font-bold">{name}</div>
-            <div className="text-s">
+            <div className="text-xs">
               {balance > 0 ? (
                 <span className="text-green-600">{`${name} owes you ${balance}$`}</span>
               ) : balance < 0 ? (
@@ -22,7 +24,9 @@ function Friend({ name, imgUrl, balance }) {
           </div>
         </div>
         <div>
-          <Button>Select</Button>
+          <Button onClick={onSelection}>
+            {isSelected ? "Close" : "Select"}
+          </Button>
         </div>
       </div>
     </>
