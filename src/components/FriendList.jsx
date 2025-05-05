@@ -1,5 +1,4 @@
 import React from "react";
-import "./main.css";
 import Friend from "../components/Friend.jsx";
 import AddFriendForm from "./AddFriendForm.jsx";
 import SplitBillForm from "./SplitBillForm.jsx";
@@ -28,10 +27,11 @@ function FriendList() {
 
   console.log(initialFriends);
   return (
-    <div className="firendlist-container">
+    <div className="flex flex-col gap-2.5 max-w-xl">
       {initialFriends.length > 0
         ? initialFriends.map((item) => (
             <Friend
+              key={item.id} // Added key prop
               name={item.name}
               imgUrl={item.image}
               balance={item.balance}

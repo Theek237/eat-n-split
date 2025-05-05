@@ -1,18 +1,29 @@
 import React from "react";
-import "./main.css";
+import Button from "./Button";
 
 function AddFriendForm() {
   return (
-    <div className="add-friend-container">
-      <form className="add-friend-form">
-        <label htmlFor="name">Name</label>
-        <input type="text" id="name" />
-        <label htmlFor="url">DP Url</label>
-        <input type="url" id="url" />
-        <button>Add</button>
-      </form>
+    <div className="w-[300px] bg-violet-100 p-4 rounded-lg shadow-md mt-4">
+      <form className="flex flex-col gap-2">
+        <label htmlFor="name" className="font-semibold">
+          🧑‍🤝‍🧑 Friend name
+        </label>
+        <input
+          type="text"
+          id="name"
+          className="p-1 border border-gray-300 bg-white rounded"
+        />
+        <label htmlFor="url" className="font-semibold">
+          🖼️ Image URL
+        </label>
+        <input
+          type="url"
+          id="url"
+          className="p-1 border border-gray-300 rounded bg-white"
+        />
 
-      <button>Close</button>
+        <Button>Add</Button>
+      </form>
     </div>
   );
 }
