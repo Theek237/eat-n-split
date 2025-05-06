@@ -2,14 +2,12 @@ import React from "react";
 import Button from "./Button";
 
 function Friend({ friend, onSelectButtonClicked, selectedFriend }) {
-  // Check if the current friend is the selected friend
   const isSelected = selectedFriend && selectedFriend.id === friend.id;
 
   return (
     <>
       <div
         className={`flex items-center justify-between gap-2.5 p-2 rounded hover:bg-violet-100 ${
-          // Use the pre-calculated isSelected variable
           isSelected ? "bg-violet-100" : ""
         }`}
       >
@@ -32,7 +30,6 @@ function Friend({ friend, onSelectButtonClicked, selectedFriend }) {
         </div>
         <div>
           <Button onClick={() => onSelectButtonClicked(friend)}>
-            {/* Use the pre-calculated isSelected variable here as well */}
             {isSelected ? "Close" : "Select"}
           </Button>
         </div>

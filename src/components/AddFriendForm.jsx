@@ -16,7 +16,6 @@ function AddFriendForm({ onAddFriend }) {
       image: `${image}?u=${crypto.randomUUID()}`,
       balance: 0,
     };
-    console.log("newFriend ==> ", newFriend);
 
     onAddFriend(newFriend);
 
