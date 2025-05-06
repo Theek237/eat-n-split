@@ -25,23 +25,30 @@ const initialFriends = [
   },
 ];
 
-function FriendList() {
-  const [showAddFriendForm, setShowAddFriend] = useState(false);
+function FriendList({ onSelectButtonClicked, selectedFriend }) {
+  const [showAddFriendForm, setShowAddFriendForm] = useState(false);
   const [friends, setFriends] = useState(initialFriends);
 
   function handleFriendListButton() {
-    setShowAddFriend((prev) => !prev);
+    setShowAddFriendForm((prev) => !prev);
   }
 
   function handleAddNewFriend(newFriend) {
     setFriends((prev) => [...prev, newFriend]);
-    setShowAddFriend(false);
+    setShowAddFriendForm(false);
   }
 
   return (
     <div className="flex flex-col gap-2.5 max-w-xl">
       {friends.length > 0
-        ? friends.map((friend) => <Friend friend={friend} key={friend.id} />)
+        ? friends.map((friend) => (
+            <Friend
+              friend={friend}
+              key={friend.id}
+              onSelectButtonClicked={onSelectButtonClicked}
+              selectedFriend={selectedFriend}
+            />
+          ))
         : "No friends"}
       {showAddFriendForm && <AddFriendForm onAddFriend={handleAddNewFriend} />}
 

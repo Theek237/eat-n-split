@@ -1,11 +1,18 @@
 import React from "react";
 import Button from "./Button";
 
-function Friend({ friend }) {
-  const isSelected = false;
+function Friend({ friend, onSelectButtonClicked, selectedFriend }) {
+  // Check if the current friend is the selected friend
+  const isSelected = selectedFriend && selectedFriend.id === friend.id;
+
   return (
     <>
-      <div className="flex items-center justify-between gap-2.5 p-2 rounded hover:bg-violet-100">
+      <div
+        className={`flex items-center justify-between gap-2.5 p-2 rounded hover:bg-violet-100 ${
+          // Use the pre-calculated isSelected variable
+          isSelected ? "bg-violet-100" : ""
+        }`}
+      >
         <div className="flex items-center gap-3">
           <img src={friend.image} className="rounded-full w-12 h-12" />
           <div className="flex flex-col text-base">
@@ -24,7 +31,10 @@ function Friend({ friend }) {
           </div>
         </div>
         <div>
-          <Button>{isSelected ? "Close" : "Select"}</Button>
+          <Button onClick={() => onSelectButtonClicked(friend)}>
+            {/* Use the pre-calculated isSelected variable here as well */}
+            {isSelected ? "Close" : "Select"}
+          </Button>
         </div>
       </div>
     </>
