@@ -5,20 +5,18 @@ function AddFriendForm({ onAddFriend }) {
   const [name, setName] = useState("");
   const [image, setImage] = useState("https://i.pravatar.cc/48");
 
-  function handleSubmit(e) {
+  function handleAddFriendFormSubmit(e) {
     e.preventDefault();
 
     if (!name || !image) return;
 
-    const id = crypto.randomUUID();
     const newFriend = {
-      id,
+      id: crypto.randomUUID(),
       name,
-      image: `${image}?=${id}`,
+      image: `${image}?u=${crypto.randomUUID()}`,
       balance: 0,
     };
-
-    console.log(newFriend);
+    console.log("newFriend ==> ", newFriend);
 
     onAddFriend(newFriend);
 
@@ -27,7 +25,10 @@ function AddFriendForm({ onAddFriend }) {
   }
   return (
     <div className="w-[300px] bg-violet-100 p-4 rounded-lg shadow-md mt-4">
-      <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+      <form
+        className="flex flex-col gap-2"
+        onSubmit={handleAddFriendFormSubmit}
+      >
         <label htmlFor="name" className="font-semibold">
           🧑‍🤝‍🧑 Friend name
         </label>

@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import Friend from "../components/Friend.jsx";
 import AddFriendForm from "./AddFriendForm.jsx";
-import SplitBillForm from "./SplitBillForm.jsx";
 import Button from "./Button.jsx";
 
 const initialFriends = [
@@ -27,49 +26,28 @@ const initialFriends = [
 ];
 
 function FriendList() {
+  const [showAddFriendForm, setShowAddFriend] = useState(false);
   const [friends, setFriends] = useState(initialFriends);
-  const [showAddFriend, setShowAddFriend] = useState(false);
-  const [selectedFriend, setSelectedFriend] = useState(null);
 
-  function handleAddButtonClick() {
+  function handleFriendListButton() {
     setShowAddFriend((prev) => !prev);
-    setSelectedFriend(null);
   }
 
-  function handleAddFriend(newFriend) {
-    setFriends((currentFriends) => [...currentFriends, newFriend]);
-    setShowAddFriend(false);
-  }
-
-  function handleSelection(friend) {
-    setSelectedFriend((currentSelected) =>
-      currentSelected.id === friend.id ? null : friend
-    );
+  function handleAddNewFriend(newFriend) {
+    setFriends((prev) => [...prev, newFriend]);
     setShowAddFriend(false);
   }
 
   return (
-    <div className="flex ">
-      <div className="flex flex-col gap-2.5 max-w-xl">
-        {initialFriends.length > 0
-          ? friends.map((friend) => (
-              <Friend
-                friend={friend}
-                key={friend.id}
-                isSelected={selectedFriend?.id === friend.id}
-                onSelection={() => handleSelection(friend)}
-              />
-            ))
-          : "No friends"}
-        {showAddFriend && <AddFriendForm onAddFriend={handleAddFriend} />}
+    <div className="flex flex-col gap-2.5 max-w-xl">
+      {friends.length > 0
+        ? friends.map((friend) => <Friend friend={friend} key={friend.id} />)
+        : "No friends"}
+      {showAddFriendForm && <AddFriendForm onAddFriend={handleAddNewFriend} />}
 
-        <Button onClick={handleAddButtonClick}>
-          {!showAddFriend ? "Add Friend" : "Close"}
-        </Button>
-      </div>
-      {selectedFriend && (
-        <SplitBillForm friend={selectedFriend} key={selectedFriend.id} />
-      )}
+      <Button onClick={handleFriendListButton}>
+        {!showAddFriendForm ? "Add Friend" : "Close"}
+      </Button>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import FriendList from "./components/FriendList";
-import Button from "./components/Button";
+import SplitBillForm from "./components/SplitBillForm";
 
 function App() {
   return (
-    <div className="container mx-auto flex flex-col p-4 gap-4">
+    <div className="container mx-auto flex items-center justify-center gap-30 p-4 max-h-screen">
       <FriendList />
+      <SplitBillForm />
     </div>
   );
 }
