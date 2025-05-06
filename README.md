@@ -1,12 +1,70 @@
-# React + Vite
+# Eat-n-Split
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that helps you track shared expenses with friends and calculate who owes whom.
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Eat-n-Split** is a user-friendly web app for tracking shared expenses with friends. Whether you're splitting restaurant bills, travel costs, or roommate expenses, this app makes it easy to keep track of who owes whom. Simply add your friends, record your shared expenses, and let the app calculate the balances. No more awkward "Who owes what?" conversations or complicated spreadsheets.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 👥 **Friend Management**: Add friends with custom names and profile pictures
+- 💰 **Balance Tracking**: Keep track of the current balance with each friend
+- 🧾 **Bill Splitting**: Easily split bills by amount, who paid, and each person's share
+- 📊 **Visual Status**: See at a glance who owes whom with color-coded balances
+- 🎨 **Clean UI**: Intuitive interface with responsive design
+
+## Technology Stack
+
+- **React**: Built with functional components and hooks
+- **Tailwind CSS**: Styled with utility-first CSS framework
+- **JavaScript (ES6+)**: Modern JavaScript features
+
+## Installation and Setup
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/yourusername/eat-n-split.git
+   ```
+
+2. Install dependencies:
+
+   ```
+   cd eat-n-split
+   npm install
+   ```
+
+3. Run the development server:
+
+   ```
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:3000`
+
+## How to Use
+
+1. **Add friends** by clicking the "Add Friend" button
+2. **Select a friend** to split a bill with
+3. **Enter the bill details** including the total amount and your share
+4. **Choose who paid** the bill
+5. **Split the bill** to update the balance
+
+## Screenshots
+
+[Insert screenshots here]
+
+## Future Enhancements
+
+- User authentication
+- Persistent data storage
+- Group expenses
+- Export/Import functionality
+- Mobile app version
+
+## License
+
+MIT
+
+---
