@@ -25,7 +25,7 @@ A React application that helps you track shared expenses with friends and calcul
 1. Clone the repository:
 
    ```
-   git clone https://github.com/yourusername/eat-n-split.git
+   git clone https://github.com/theek237/eat-n-split.git
    ```
 
 2. Install dependencies:
@@ -41,7 +41,7 @@ A React application that helps you track shared expenses with friends and calcul
    npm run dev
    ```
 
-4. Open your browser and navigate to `http://localhost:3000`
+4. Open your browser and navigate to `http://localhost:5173`
 
 ## How to Use
 
@@ -53,7 +53,9 @@ A React application that helps you track shared expenses with friends and calcul
 
 ## Screenshots
 
-[Insert screenshots here]
+![Image 1](image.png)
+![Image 2](image-1.png)
+![Image 3](image-2.png)
 
 ## Future Enhancements
 
