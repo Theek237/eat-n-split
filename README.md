@@ -51,12 +51,6 @@ A React application that helps you track shared expenses with friends and calcul
 4. **Choose who paid** the bill
 5. **Split the bill** to update the balance
 
-## Screenshots
-
-![Image 1](image.png)
-![Image 2](image-1.png)
-![Image 3](image-2.png)
-
 ## Future Enhancements
 
 - User authentication
